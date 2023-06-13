@@ -44,7 +44,9 @@ class BucketController extends Controller
                     $bk->update();
                     track::where('bucket_id', $bk->id)->delete();
                 }
+                track::truncate();
             }
+            
             $buck = new bucket;
             $buck->name = $request->bucket_name;
             $buck->volume = $request->bucket_volume;

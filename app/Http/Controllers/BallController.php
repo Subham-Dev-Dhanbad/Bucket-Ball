@@ -40,9 +40,11 @@ class BallController extends Controller
                     $bk->filed_volume = 0;
                     $bk->empty_volume = $bk->volume;
                     $bk->update();
-                    track::where('bucket_id', $bk->id)->delete();
+                    
                 }
+                track::truncate();
             }
+            
             $bal = new ball;
             $bal->name = $request->ball_name;
             $bal->volume = $request->ball_volume;

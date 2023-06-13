@@ -120,8 +120,6 @@ class TrackController extends Controller
                     $request->session()->flash('error', 'Something went Wrong!..');
                     return redirect(route('balls.assgin.add'));
                 }
-
-
             }
 
         }else{
