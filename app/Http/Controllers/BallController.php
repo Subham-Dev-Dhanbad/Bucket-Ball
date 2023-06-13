@@ -42,6 +42,9 @@ class BallController extends Controller
                     $bk->update();
                     
                 }
+            }
+
+            if(track::count() > 0){
                 track::truncate();
             }
             

@@ -44,6 +44,9 @@ class BucketController extends Controller
                     $bk->update();
                     track::where('bucket_id', $bk->id)->delete();
                 }
+            }
+
+            if(track::count() > 0){
                 track::truncate();
             }
             
